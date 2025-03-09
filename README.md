@@ -18,4 +18,9 @@ RESOURCE comments ONLY index,create
 # auth when needed
 AUTH jwt bearer
 GET /admin/stats -> 200 {count int} AUTH jwt
+
+GROUP Admin
+  GET /admin/stats -> 200 {count int} AUTH jwt
+  POST /admin/reset -> 204 AUTH jwt
+ENDGROUP
 ```
